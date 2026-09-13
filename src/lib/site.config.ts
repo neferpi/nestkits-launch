@@ -1,6 +1,9 @@
 /**
  * NestKits · Launch — single source of brand & copy.
  * Rebrand the whole site by editing this file.
+ *
+ * Default path: free waitlist only. Stripe Checkout is optional —
+ * enable when *you* (the template user) want to charge *your* customers.
  */
 
 export const siteConfig = {
@@ -8,24 +11,24 @@ export const siteConfig = {
   shortName: "Acme",
   tagline: "Ship your indie product this weekend.",
   description:
-    "The credible pre-launch page for solo founders — landing, waitlist, and early-bird checkout on Cloudflare Pages.",
+    "The credible pre-launch page for solo founders — landing and waitlist on Cloudflare Pages. Optional Stripe when you're ready to charge your customers.",
   url: "https://nestkits-launch.pages.dev",
   ogImage: "/og.png",
   twitter: "@neferpi",
   email: "hello@example.com",
 
   hero: {
-    eyebrow: "Now in early access",
+    eyebrow: "Free during beta",
     title: "Validate before you build.",
     subtitle:
-      "A polished launch page with waitlist capture and Stripe Checkout — opinionated Nest defaults, ready for Cloudflare Pages.",
+      "A polished launch page with waitlist capture on Cloudflare Pages — opinionated Nest defaults. Stripe is optional and off by default.",
     primaryCta: "Join the waitlist",
-    secondaryCta: "See pricing",
+    secondaryCta: "See plans",
     secondaryHref: "/pricing/",
   },
 
   socialProof: {
-    label: "Trusted by indie builders",
+    label: "Built for indie builders",
     logos: [
       { name: "PixelForge" },
       { name: "CronNest" },
@@ -35,7 +38,7 @@ export const siteConfig = {
     ],
     stats: [
       { value: "2.4k+", label: "waitlist signups" },
-      { value: "$18k", label: "presale revenue" },
+      { value: "Free", label: "during beta" },
       { value: "48h", label: "avg. time to launch" },
     ],
   },
@@ -54,9 +57,9 @@ export const siteConfig = {
       icon: "mail" as const,
     },
     {
-      title: "Stripe Checkout stub",
+      title: "Optional Stripe Checkout",
       description:
-        "Early-bird / founder SKUs with a Checkout session helper and webhook stub. Takes money when you're ready.",
+        "Stub ready when *you* want to charge *your* customers. Off by default — ship waitlist first.",
       icon: "creditCard" as const,
     },
   ],
@@ -64,19 +67,19 @@ export const siteConfig = {
   faq: [
     {
       q: "Is this a full SaaS boilerplate?",
-      a: "No. NestKits Launch is landing + waitlist + pricing + Stripe Checkout stub. Auth, dashboard, and billing portal ship in NestKits SaaS Shell.",
+      a: "No. NestKits Launch is landing + waitlist + optional Stripe Checkout stub. Auth, dashboard, and billing portal ship in NestKits SaaS Shell.",
     },
     {
       q: "Does it deploy to Cloudflare Pages?",
       a: "Yes. Static Next.js export to out/ plus Pages Functions for waitlist and Stripe. Docs match CF Pages in 2026 — no abandoned next-on-pages.",
     },
     {
-      q: "What if I don't have Stripe or KV yet?",
-      a: "Demo mode. Waitlist returns success with a setup note; pricing buttons explain missing keys. Ship the page first, wire payments later.",
+      q: "Do I need Stripe to ship?",
+      a: "No. Default path is free waitlist only. Demo mode works without KV or Stripe. Turn on Checkout later if you want to charge your own customers — see docs/STRIPE.md.",
     },
     {
-      q: "Can I use this commercially?",
-      a: "Yes — single-seat commercial license for your own projects. You may not resell or redistribute the template itself.",
+      q: "Is NestKits Launch free?",
+      a: "Yes — MIT licensed by neferpi. Commercial Gumroad sales are paused. Use it for personal and commercial projects.",
     },
     {
       q: "How do I rebrand?",
@@ -89,7 +92,7 @@ export const siteConfig = {
       id: "waitlist",
       name: "Waitlist",
       price: "Free",
-      priceNote: "Join early access",
+      priceNote: "join early access",
       description: "Get notified when we launch. No card required.",
       features: [
         "Early access invite",
@@ -98,42 +101,43 @@ export const siteConfig = {
       ],
       cta: "Join waitlist",
       href: "/#waitlist",
-      highlighted: false,
+      highlighted: true,
       stripePriceId: null as string | null,
     },
     {
       id: "early-bird",
       name: "Early bird",
-      price: "$39",
-      priceNote: "one-time · first 50",
-      description: "Lock launch pricing and skip the waitlist.",
+      price: "Soon",
+      priceNote: "free during beta",
+      description: "Paid early-bird is coming later. Join the waitlist for now.",
       features: [
         "Everything in Waitlist",
-        "Lifetime lifetime access",
-        "Founder Slack channel",
-        "Priority support (7 days)",
+        "Launch pricing lock (soon)",
+        "Founder updates",
+        "No checkout required today",
       ],
-      cta: "Get early bird",
-      href: null,
-      highlighted: true,
-      stripePriceId: "price_EARLY_BIRD_REPLACE",
+      cta: "Join waitlist",
+      href: "/#waitlist",
+      highlighted: false,
+      // Optional: set a real price id + href:null when *you* want Checkout for your customers
+      stripePriceId: null as string | null,
     },
     {
       id: "founder",
       name: "Founder",
-      price: "$99",
-      priceNote: "one-time · limited",
-      description: "For founders who want the bundle path later.",
+      price: "Soon",
+      priceNote: "coming soon",
+      description: "Higher tier later. Waitlist is the path during beta.",
       features: [
         "Everything in Early bird",
-        "1:1 setup call (30 min)",
-        "Custom OG image review",
-        "Pack #2 Docs coupon",
+        "Setup call (when live)",
+        "Custom review (when live)",
+        "Join waitlist today",
       ],
-      cta: "Get founder",
-      href: null,
+      cta: "Join waitlist",
+      href: "/#waitlist",
       highlighted: false,
-      stripePriceId: "price_FOUNDER_REPLACE",
+      stripePriceId: null as string | null,
     },
   ],
 
@@ -145,7 +149,7 @@ export const siteConfig = {
   },
 
   footer: {
-    blurb: "A NestKits starter by neferpi.",
+    blurb: "A free NestKits starter by neferpi · MIT.",
     links: [
       { label: "Pricing", href: "/pricing/" },
       { label: "Privacy", href: "/privacy/" },

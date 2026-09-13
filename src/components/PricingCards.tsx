@@ -23,7 +23,7 @@ function PlanCard({ plan }: { plan: Plan }) {
     }
     setNote(
       result.message ||
-        "Stripe keys missing. Set STRIPE_SECRET_KEY and price IDs — see docs/STRIPE.md.",
+        "Stripe is optional and off by default. Join the waitlist, or enable Checkout later — see docs/STRIPE.md.",
     );
   }
 
@@ -40,7 +40,7 @@ function PlanCard({ plan }: { plan: Plan }) {
     >
       {plan.highlighted && (
         <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-0.5 text-xs font-semibold text-accent-foreground">
-          Most popular
+          Recommended
         </span>
       )}
       <h3 className="text-lg font-semibold">{plan.name}</h3>

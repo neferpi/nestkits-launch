@@ -1,5 +1,7 @@
 # Quickstart (<10 minutes)
 
+**Default path: free waitlist only.** Stripe is optional (see `docs/STRIPE.md`) when you later want to charge *your* customers.
+
 ## 1. Install
 
 ```bash
@@ -17,7 +19,7 @@ Edit `src/lib/site.config.ts` — name, tagline, features, plans, FAQ.
 npm run dev
 ```
 
-Open http://localhost:3000. Waitlist/Stripe hit `/api/*` which needs Pages Functions — without them, forms enter **demo mode** (success + setup note).
+Open http://localhost:3000. Waitlist hits `/api/*` which needs Pages Functions — without them, forms enter **demo mode** (success + setup note). You do **not** need Stripe to try the waitlist.
 
 ## 4. Build
 
@@ -44,3 +46,7 @@ See `docs/DEPLOY_PAGES.md`.
 npm run build
 npx wrangler pages deploy out --project-name=nestkits-launch
 ```
+
+## 7. (Optional) Stripe later
+
+Only when you want Checkout for *your* customers — `docs/STRIPE.md`. NestKits itself stays free / MIT.

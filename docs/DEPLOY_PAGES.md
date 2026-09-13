@@ -35,6 +35,9 @@ Alternatively bind **WAITLIST** in Pages → Settings → Bindings (handy for Gi
 ## Secrets
 
 ```bash
+
+> **Stripe is optional** (off by default). Skip these secrets for waitlist-only. NestKits is free/MIT; Gumroad paused.
+
 npx wrangler pages secret put STRIPE_SECRET_KEY --project-name=nestkits-launch
 npx wrangler pages secret put STRIPE_PRICE_EARLY_BIRD --project-name=nestkits-launch
 npx wrangler pages secret put STRIPE_PRICE_FOUNDER --project-name=nestkits-launch
@@ -67,7 +70,7 @@ Pages → Custom domains → add your domain → follow DNS instructions.
 
 1. Open the Pages URL — landing loads dark UI
 2. Submit waitlist — persists once KV is bound (otherwise demo mode JSON)
-3. Pricing → Early bird — setup message until Stripe secrets exist; then Checkout redirects
+3. Pricing → waitlist CTAs (default). Optional Stripe Checkout only if you enable secrets + plan href:null
 
 ## Caveats
 

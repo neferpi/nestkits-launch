@@ -1,23 +1,21 @@
-NestKits · Launch — Commercial Single-Seat License
+MIT License
+
 Copyright (c) 2026 neferpi / NestKits
 
-Permission is granted to the license holder ("you") to use this template source
-for unlimited personal and commercial projects that you own or build for clients.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-You MAY:
-- Modify the code for your products and client work
-- Deploy unlimited sites derived from this template
-- Receive minor/patch updates to Pack #1 for the lifetime of this license
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-You MAY NOT:
-- Resell, redistribute, or sublicense the template itself (original or modified)
-  as a competing starter kit, boilerplate, or template product
-- Share the source with teammates beyond a single seat without purchasing
-  additional seats
-- Remove license notices from redistributed derivative marketing materials
-  that claim NestKits authorship fraudulently
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. 7-day refund
-if the files will not build/deploy as documented in docs/ at purchase time.
-
-For multi-seat / team licensing, contact hello@neferpi.com (or listing support).
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

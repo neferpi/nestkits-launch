@@ -12,7 +12,7 @@ Everything lives in `src/lib/site.config.ts`:
 | `socialProof` | Logo strip + stats |
 | `features` | Three feature cards (`icon`: `sparkles` \| `mail` \| `creditCard`) |
 | `faq` | FAQ pairs |
-| `plans` | Pricing cards + Stripe price id placeholders |
+| `plans` | Pricing cards (default: waitlist-first; Stripe optional) |
 | `cta` | Bottom band |
 | `footer` | Blurb + links |
 | `url` | canonical / sitemap / OG base |
@@ -30,11 +30,14 @@ Fonts: Geist Sans / Mono via `next/font` in `layout.tsx`.
 
 Landing is composed in `src/app/page.tsx`. Comment out `<FAQ />` or `<SocialProof />` to drop a section.
 
-## Plans
+## Plans (waitlist default · Stripe optional)
 
-- `href` set → link button (waitlist uses `/#waitlist`)
-- `href: null` + `stripePriceId` → Checkout button via `/api/checkout`
-- Update `functions/api/checkout.ts` if you add a fourth paid plan
+**Default path is free waitlist only.** Paid CTAs are demoted / “coming soon” during beta.
+
+- `href` set → link button (waitlist uses `/#waitlist`) — **recommended default**
+- `href: null` + `stripePriceId` → Checkout button via `/api/checkout` — enable later when *you* want to charge *your* customers
+- Update `functions/api/checkout.ts` if you add another paid plan
+- See `docs/STRIPE.md` — NestKits Launch itself is MIT; Gumroad commercial plan is paused
 
 ## Components
 

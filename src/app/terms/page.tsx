@@ -13,14 +13,13 @@ export default function TermsPage() {
       <p className="mt-2 text-sm text-muted-foreground">Last updated: stub — replace before launch.</p>
       <div className="mt-8 space-y-4 text-sm leading-relaxed text-muted-foreground">
         <p>
-          By using {siteConfig.name}, you agree to these terms. Early access purchases are
-          one-time digital goods; refunds follow the policy stated at checkout (default: 7 days if
-          files won&apos;t run as documented).
+          By using {siteConfig.name}, you agree to these terms. During beta, access is free via
+          the waitlist. If you later enable paid checkout for your own customers, refunds follow
+          the policy you state at purchase time.
         </p>
         <p>
-          You may not reverse-engineer, resell, or redistribute template source as a competing
-          starter kit. Using NestKits Launch to build your own products is allowed under the
-          commercial single-seat license.
+          NestKits Launch itself is MIT-licensed open source from neferpi — use it to build your
+          own products. Customize this page for your jurisdiction and product terms.
         </p>
         <p>
           Contact:{" "}

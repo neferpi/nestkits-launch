@@ -1,7 +1,7 @@
 # NestKits · Launch — Cloudflare Pages
 # Deploy: npm run build && npx wrangler pages deploy out --project-name=nestkits-launch
 #
-# Buyers: replace id/preview_id with your own from:
+# Users: replace id/preview_id with your own from:
 #   npx wrangler kv namespace create WAITLIST
 #   npx wrangler kv namespace create WAITLIST --preview
 # Or remove [[kv_namespaces]] and bind WAITLIST in the Pages dashboard.
@@ -17,6 +17,7 @@ id = "168537e80ec94fd59550cbbcbc79e602"
 preview_id = "768e08f62e7946df8ed45de5ba02354f"
 
 # Secrets (dashboard or `wrangler pages secret put`):
+# Stripe keys are OPTIONAL — waitlist works without them.
 # STRIPE_SECRET_KEY
 # STRIPE_WEBHOOK_SECRET
 # STRIPE_PRICE_EARLY_BIRD
