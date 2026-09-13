@@ -5,8 +5,8 @@ NestKits Launch ships as **static `out/` + Pages Functions** in `functions/`.
 ## Prerequisites
 
 - Cloudflare account
-- Node 20+ (wrangler pinned; Node 22+ for wrangler 4+)
-- `npx wrangler` (no global install required)
+- Node 20+ (this repo pins **wrangler@3**; wrangler 4+ may need Node 22+)
+- `npx wrangler` via the project dependency
 
 ## One-shot deploy
 
@@ -17,19 +17,20 @@ npx wrangler pages project create nestkits-launch   # once
 npx wrangler pages deploy out --project-name=nestkits-launch
 ```
 
-Wrangler uploads `out/` and the `functions/` directory automatically when present at the repo root.
+Wrangler uploads `out/` and the `functions/` directory when present at the repo root.
 
 ## KV binding
 
 ```bash
 npx wrangler kv namespace create WAITLIST
+npx wrangler kv namespace create WAITLIST --preview
 ```
 
-Copy the `id` into `wrangler.toml` under `[[kv_namespaces]]`.
+Paste the ids into `wrangler.toml` under `[[kv_namespaces]]` (binding name must be **`WAITLIST`**).
 
-In the Pages dashboard: **Settings → Bindings → KV namespace** → binding name **`WAITLIST`** → select the namespace.
+**Important:** never leave `REPLACE_WITH_KV_NAMESPACE_ID` as a live `id` — Wrangler validates hex and deploy fails. See `wrangler.toml.example`.
 
-Or with wrangler (Pages project config), ensure the binding name matches exactly: `WAITLIST`.
+Alternatively bind **WAITLIST** in Pages → Settings → Bindings (handy for Git-connected builds). For `wrangler pages deploy` direct uploads, putting ids in `wrangler.toml` is the reliable path.
 
 ## Secrets
 
@@ -54,8 +55,9 @@ npx wrangler pages secret put WAITLIST_FROM_EMAIL --project-name=nestkits-launch
 2. Cloudflare Dashboard → Workers & Pages → Create → Connect to Git
 3. Build command: `npm run build`
 4. Build output directory: `out`
-5. Root directory: `/` (or monorepo path if nested)
+5. Root directory: `/`
 6. Add KV binding + secrets as above
+7. Optional: set `NODE_VERSION=22` if you upgrade to wrangler 4
 
 ## Custom domain
 
@@ -64,17 +66,12 @@ Pages → Custom domains → add your domain → follow DNS instructions.
 ## Verify
 
 1. Open the Pages URL — landing loads dark UI
-2. Submit waitlist — should persist once KV is bound
+2. Submit waitlist — persists once KV is bound (otherwise demo mode JSON)
 3. Pricing → Early bird — setup message until Stripe secrets exist; then Checkout redirects
 
 ## Caveats
 
-- This pack uses **static export**, not OpenNext full SSR. API routes are Pages Functions only.
+- **Static export**, not OpenNext full SSR. APIs are Pages Functions only.
 - `NEXT_PUBLIC_*` vars are compile-time — rebuild after changing them.
-- Trailing slashes are enabled (`trailingSlash: true`) to match Pages static routing.
-
-## Node / Wrangler versions
-
-- This repo pins **wrangler@3** as a devDependency (works on Node 20).
-- Latest wrangler (4+) may require **Node 22+**. Cloudflare Pages build image can use Node 22 via environment variable `NODE_VERSION=22`.
-- Local demo: `npx wrangler pages dev out --kv WAITLIST` after `npm run build`.
+- Trailing slashes enabled (`trailingSlash: true`) for Pages static routing.
+- Local full stack: `npm run build && npx wrangler pages dev out --kv WAITLIST`

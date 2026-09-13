@@ -9,7 +9,7 @@ export const siteConfig = {
   tagline: "Ship your indie product this weekend.",
   description:
     "The credible pre-launch page for solo founders — landing, waitlist, and early-bird checkout on Cloudflare Pages.",
-  url: "https://launch.demo.example.com",
+  url: "https://nestkits-launch.pages.dev",
   ogImage: "/og.png",
   twitter: "@neferpi",
   email: "hello@example.com",
