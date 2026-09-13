@@ -5,7 +5,7 @@ NestKits Launch ships as **static `out/` + Pages Functions** in `functions/`.
 ## Prerequisites
 
 - Cloudflare account
-- Node 20+
+- Node 20+ (wrangler pinned; Node 22+ for wrangler 4+)
 - `npx wrangler` (no global install required)
 
 ## One-shot deploy
@@ -72,3 +72,9 @@ Pages → Custom domains → add your domain → follow DNS instructions.
 - This pack uses **static export**, not OpenNext full SSR. API routes are Pages Functions only.
 - `NEXT_PUBLIC_*` vars are compile-time — rebuild after changing them.
 - Trailing slashes are enabled (`trailingSlash: true`) to match Pages static routing.
+
+## Node / Wrangler versions
+
+- This repo pins **wrangler@3** as a devDependency (works on Node 20).
+- Latest wrangler (4+) may require **Node 22+**. Cloudflare Pages build image can use Node 22 via environment variable `NODE_VERSION=22`.
+- Local demo: `npx wrangler pages dev out --kv WAITLIST` after `npm run build`.
