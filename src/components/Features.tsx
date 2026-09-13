@@ -13,10 +13,10 @@ export function Features() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            Everything to look legit and take money
+            Everything to look legit and capture emails
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Free starters get you a pretty page. NestKits gets you on Cloudflare with a waitlist that stores and a button that can charge.
+            Free starters get you a pretty page. NestKits gets you on Cloudflare with a waitlist that stores — Stripe optional later for your customers.
           </p>
         </div>
         <ul className="mt-12 grid gap-5 sm:grid-cols-3">
