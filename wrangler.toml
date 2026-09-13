@@ -1,0 +1,23 @@
+# NestKits · Launch — Cloudflare Pages example
+# Deploy: npm run build && npx wrangler pages deploy out --project-name=nestkits-launch
+#
+# Create KV: npx wrangler kv namespace create WAITLIST
+# Then paste the id below and bind in the Pages dashboard (Settings → Functions → KV).
+
+name = "nestkits-launch"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "out"
+
+[[kv_namespaces]]
+binding = "WAITLIST"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_KV_PREVIEW_ID"
+
+# Secrets (set via dashboard or `wrangler pages secret put`):
+# STRIPE_SECRET_KEY
+# STRIPE_WEBHOOK_SECRET
+# STRIPE_PRICE_EARLY_BIRD
+# STRIPE_PRICE_FOUNDER
+# SITE_URL
+# RESEND_API_KEY (optional)
+# WAITLIST_FROM_EMAIL (optional)
